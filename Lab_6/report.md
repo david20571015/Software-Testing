@@ -21,7 +21,7 @@ int main() {
 }
 ```
 
-### ASan report
+### ASan report (detected)
 
 ```shell
 =================================================================
@@ -68,7 +68,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 ==2331==ABORTING
 ```
 
-### valgrind report
+### valgrind report (detected)
 
 ```shell
 ==3282== Memcheck, a memory error detector
@@ -110,7 +110,7 @@ int main() {
 }
 ```
 
-### ASan report
+### ASan report (detected)
 
 ```shell
 ==2365==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7ffe2b649af0 at pc 0x55dc3d00a336 bp 0x7ffe2b649a90 sp 0x7ffe2b649a80
@@ -162,7 +162,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 ==2365==ABORTING
 ```
 
-### valgrind report
+### valgrind report (not detected)
 
 ```shell
 ==3323== Memcheck, a memory error detector
@@ -197,7 +197,7 @@ int main() {
 }
 ```
 
-### ASan report
+### ASan report (detected)
 
 ```shell
 =================================================================
@@ -244,7 +244,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 ==2428==ABORTING
 ```
 
-### valgrind report
+### valgrind report (not detected)
 
 ```shell
 ==3372== Memcheck, a memory error detector
@@ -278,7 +278,7 @@ int main() {
 }
 ```
 
-### ASan report
+### ASan report (detected)
 
 ```shell
 ==2559==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000010 at pc 0x55f557989226 bp 0x7ffc3d17f4c0 sp 0x7ffc3d17f4b0
@@ -334,7 +334,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 ==2559==ABORTING
 ```
 
-### valgrind report
+### valgrind report (detected)
 
 ```shell
 ==3403== Memcheck, a memory error detector
@@ -380,7 +380,7 @@ int main() {
 }
 ```
 
-### ASan report
+### ASan report (detected)
 
 ```shell
 AddressSanitizer:DEADLYSIGNAL
@@ -397,7 +397,7 @@ SUMMARY: AddressSanitizer: SEGV (/home/david/Software-Testing/Lab_6/5.out+0x13b5
 ==3053==ABORTING
 ```
 
-### valgrind report
+### valgrind report (detected)
 
 ```shell
 ==3437== Memcheck, a memory error detector
@@ -428,4 +428,14 @@ SUMMARY: AddressSanitizer: SEGV (/home/david/Software-Testing/Lab_6/5.out+0x13b5
 ==3437== For lists of detected and suppressed errors, rerun with: -s
 ==3437== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 [1]    3437 segmentation fault  valgrind ./5.out
+```
+
+## Cross the redzone
+
+### ASan report (not detected)
+
+The program did not directly access the redzone.
+
+```shell
+(None)
 ```
