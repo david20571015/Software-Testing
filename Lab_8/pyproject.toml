@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "lab_8"
+version = "0.1.0"
+description = ""
+authors = ["David, Chiu <david20571015@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+angr = "^9.2.1"
+angr-utils = "^0.5.0"
+bingraphvis = "^0.4.0"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.13.7"
+yapf = "^0.32.0"
+toml = "^0.10.2"
+
+[tool.yapf]
+based_on_style = "google"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
